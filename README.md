@@ -52,6 +52,12 @@ Below is an example of a successful UI test execution from the framework:
 
 ![Login Test](docs/login-test.png)
 
+## Extent Report Screenshot
+
+Below is an example of a successful UI test execution report from the framework:
+
+![Extent Report](docs/extent-report.png)
+
 ## How to Run
 
 1. Clone the repository
@@ -67,10 +73,10 @@ Below is an example of a successful UI test execution from the framework:
 - Clean separation of concerns
 - Positive and negative login coverage
 - Screenshot capture on failure
+- Extent Reports integration for HTML test reporting
 
 ## Future Improvements
 
-- Extent Reports integration
 - Parallel execution
 - CI/CD pipeline integration
 - Cross-browser execution enhancements
