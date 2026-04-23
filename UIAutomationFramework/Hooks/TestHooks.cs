@@ -2,6 +2,8 @@
 using Reqnroll;
 using UIAutomationFramework.Drivers;
 using UIAutomationFramework.Utilities;
+using AventStack.ExtentReports;
+using UIAutomationFramework.Reporting;
 
 namespace UIAutomationFramework.Hooks
 {
@@ -21,19 +23,32 @@ namespace UIAutomationFramework.Hooks
         {
             _driver = DriverFactory.CreateDriver();
             _scenarioContext["WebDriver"] = _driver;
+            ExtentReportManager.CreateTest(_scenarioContext.ScenarioInfo.Title);
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
             var settings = ConfigurationHelper.GetSettings();
+            var test = ExtentReportManager.GetTest();
 
-            if (_scenarioContext.TestError != null && settings.TakeScreenshotOnFailure)
+            if (_scenarioContext.TestError == null)
             {
-                ScreenshotHelper.Capture(_driver, _scenarioContext.ScenarioInfo.Title);
+                test.Pass("Scenario passed successfully.");
+            }
+            else
+            {
+                test.Fail($"Scenario failed: {_scenarioContext.TestError.Message}");
+
+                if (settings.TakeScreenshotOnFailure)
+                {
+                    var screenshotPath = ScreenshotHelper.Capture(_driver, _scenarioContext.ScenarioInfo.Title);
+                    test.AddScreenCaptureFromPath(screenshotPath);
+                }
             }
 
             _driver.Quit();
+            ExtentReportManager.FlushReport();
         }
     }
 }
