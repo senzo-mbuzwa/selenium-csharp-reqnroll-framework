@@ -42,6 +42,8 @@ This project demonstrates a maintainable UI automation framework using the **Pag
 
 ## Test Execution Screenshot
 
+Below is an example of a successful UI test execution from the framework:
+
 ![Login Test](docs/login-test.png)
 
 ## How to Run
