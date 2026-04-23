@@ -25,6 +25,11 @@ namespace UIAutomationFramework.Pages
             Actions.Click(_loginButton);
         }
 
+        public void LoginWithBlankCredentials()
+        {
+            Actions.Click(_loginButton);
+        }
+
         public string GetLoginErrorMessage()
         {
             return Actions.GetText(_errorMessage);

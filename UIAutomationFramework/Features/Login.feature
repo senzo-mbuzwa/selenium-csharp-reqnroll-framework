@@ -13,3 +13,8 @@
     Given the user navigates to the login page
     When the user logs in with invalid credentials
     Then a login error message should be displayed
+
+  Scenario: Unsuccessful login with blank credentials
+    Given the user navigates to the login page
+    When the user logs in with blank credentials
+    Then a required field validation message should be displayed

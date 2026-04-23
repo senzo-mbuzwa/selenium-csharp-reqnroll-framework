@@ -57,5 +57,19 @@ namespace UIAutomationFramework.StepDefinitions
             _actualErrorMessage.Should().NotBeNullOrWhiteSpace();
             _actualErrorMessage.Should().Contain("The username and password could not be verified");
         }
+
+        [When(@"the user logs in with blank credentials")]
+        public void WhenTheUserLogsInWithBlankCredentials()
+        {
+            _loginPage.LoginWithBlankCredentials();
+        }
+
+        [Then(@"a required field validation message should be displayed")]
+        public void ThenARequiredFieldValidationMessageShouldBeDisplayed()
+        {
+            _actualErrorMessage = _loginPage.GetLoginErrorMessage();
+            _actualErrorMessage.Should().NotBeNullOrWhiteSpace();
+            _actualErrorMessage.Should().Contain("Please enter a username and password");
+        }
     }
 }
