@@ -40,6 +40,10 @@ This project demonstrates a maintainable UI automation framework using the **Pag
 - Successful login with valid credentials
 - Unsuccessful login with invalid credentials
 
+## Test Execution Screenshot
+
+![Login Test](docs/login-test.png)
+
 ## How to Run
 
 1. Clone the repository
