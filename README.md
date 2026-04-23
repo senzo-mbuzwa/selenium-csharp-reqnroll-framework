@@ -1,5 +1,10 @@
 ﻿# Selenium C# Reqnroll Framework
 
+![.NET](https://img.shields.io/badge/.NET-8-blue)
+![Selenium](https://img.shields.io/badge/Selenium-Automation-green)
+![Reqnroll](https://img.shields.io/badge/BDD-Reqnroll-orange)
+![NUnit](https://img.shields.io/badge/TestFramework-NUnit-yellow)
+
 A scalable UI automation framework built with **C#**, **Selenium WebDriver**, and **Reqnroll (BDD)**.
 
 ## Overview
