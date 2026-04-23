@@ -44,6 +44,7 @@ This project demonstrates a maintainable UI automation framework using the **Pag
 
 - Successful login with valid credentials
 - Unsuccessful login with invalid credentials
+- Unsuccessful login with blank credentials
 
 ## Test Execution Screenshot
 
